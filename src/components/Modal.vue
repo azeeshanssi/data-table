@@ -38,16 +38,16 @@ import { ref } from 'vue'
 import { defineEmits, defineProps } from 'vue'
 const emit = defineEmits(['close', 'add'])
 const props = defineProps(['dropdown'])
-const selected = ref([]) // Initialize with an empty array
 
-//Radio
+//RADIO
+const selected = ref([])
 const dropdownOptions = ref(props.dropdown)
 const handleRadioChange = (header) => {
   if (!selected.value.includes(header)) {
     selected.value.push(header)
   }
 }
-//Modal
+//MODAL
 const handleAdd = () => {
   if (selected.value) {
     emit('add', selected.value)
@@ -64,4 +64,12 @@ const handleExternalClick = (event) => {
     emit('close')
   }
 }
+
+// LOGICAL CONCERN ORDERING
+// DATA - (REF, COMPUTED, INJECTS)
+// FUNCTIONS
+// WATCHERS
+// LIFE CYCLE HOOKS 
+// PROVIDES
+
 </script>

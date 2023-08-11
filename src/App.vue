@@ -4,16 +4,23 @@
     <h1 class="text-3xl font-medium my-2">Crypto Currency Data</h1>
     <div class="w-full flex flex-col items-center">
       <h1 class="text-3xl font-medium my-2">My Data Table</h1>
+      <button
+        @click="setModal"
+        class="px-4 py-2 rounded-md bg-blue-500 hover:bg-blue-600 mt-4 text-white mb-2"
+      >
+        Add Column
+      </button>
       <table class="w-5/6">
         <thead>
           <tr>
             <th
-              class="bg-blue-600 hover:bg-blue-300 hover:cursor-pointer text-white border px-4 py-2"
+              class="bg-blue-600 hover:bg-blue-300 capitalize hover:cursor-pointer text-white border px-4 py-2"
               v-for="header in selectedHeaders"
               :key="header"
               @click="sortData(header)"
             >
-              {{ formatHeader(header) }}
+              <!-- {{ formatHeader(header) }} -->
+              {{  header.replaceAll('_',' ') }}
             </th>
           </tr>
         </thead>
@@ -38,12 +45,6 @@
         </tbody>
       </table>
     </div>
-    <button
-      @click="setModal"
-      class="px-4 py-2 rounded-md bg-blue-500 hover:bg-blue-600 mt-4 text-white mb-2"
-    >
-      Add Column
-    </button>
   </div>
 </template>
 
