@@ -6,11 +6,11 @@
     <div id="card" class="bg-white p-12 rounded-lg shadow-lg h-2/3 flex flex-col">
       <h1 class="text-center text-xl">Select Columns</h1>
       <div class="mt-2 w-full">
-        <label v-for="(header, index) in dropdownOptions" :key="index" class="flex items-center">
+        <label v-for="(header, index) in dropdownOptions" :key="index" class="flex items-center capitalize">
           <input
             type="radio"
             :value="header"
-            class="form-radio text-slate-600 mr-1 capitalize"
+            class="form-radio  text-slate-600 mr-1 "
             @change="handleRadioChange(header)"
           />
           {{ header.replaceAll('_',' ') }}
