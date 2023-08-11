@@ -38,7 +38,7 @@ import { ref } from 'vue'
 import { defineEmits, defineProps } from 'vue'
 const emit = defineEmits(['close', 'add'])
 const props = defineProps(['dropdown'])
-const selected = ref([]) // Initialize with an empty string
+const selected = ref([]) // Initialize with an empty array
 
 //Radio
 const dropdownOptions = ref(props.dropdown)
