@@ -10,10 +10,10 @@
           <input
             type="radio"
             :value="header"
-            class="form-radio text-slate-600 mr-1"
+            class="form-radio text-slate-600 mr-1 capitalize"
             @change="handleRadioChange(header)"
           />
-          {{ header }}
+          {{ header.replaceAll('_',' ') }}
         </label>
       </div>
 
