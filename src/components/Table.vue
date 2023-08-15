@@ -44,7 +44,7 @@
                 <img :src="coin[header]" alt="Coin Image" class="w-10 h-10" />
               </template>
               <template v-else>
-                <template v-if="(typeof coin[header]!='string')">
+                <template v-if="(typeof coin[header]!='string' &&header.includes('change'))">
                   <template v-if="coin[header]<0">
                     <div class="text-red-400">{{ coin[header] }}</div>
                   </template>
