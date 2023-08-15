@@ -1,5 +1,5 @@
 <template>
-  <Modal v-if="showModal" :dropdown="filteredHeaders" @close="handleClose" @add="handleAdd"></Modal>
+  <Modal v-if="showModal" :filtered="filteredHeaders" :allHeaders="headers" :selected="selectedHeaders" @update:selected="updateSelected" @close="handleClose" @add="handleAdd"></Modal>
   <div v-if="!showModal" class="w-screen h-screen flex flex-col items-center">
     <h1 class="text-3xl font-medium my-2">Crypto Currency Data</h1>
     <div class="w-full flex flex-col items-center">
@@ -63,6 +63,9 @@ const handleAdd = (selected) => {
       filteredHeaders.value.splice(columnIndex, 1)
     }
   }
+}
+const updateSelected = (value) => {
+  selectedHeaders.value=value;
 }
 const isMounted = ref(false)
 
