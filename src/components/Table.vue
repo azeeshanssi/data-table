@@ -43,8 +43,19 @@
                 <img :src="coin[header]" alt="Coin Image" class="w-10 h-10" />
               </template>
               <template v-else>
-                {{ coin[header] }}
+                <template v-if="(typeof coin[header]!='string')">
+                  <template v-if="coin[header]<0">
+                    <div class="text-red-400">{{ coin[header] }}</div>
+                  </template>
+                  <template v-else>
+                    <div class="text-green-600">{{ coin[header] }}</div>
+                  </template>
+                </template>
+                <template v-else>
+                  {{coin[header]}}
+                </template>
               </template>
+          
             </template>
             <template v-else>
               <div class="text-center">-</div>
