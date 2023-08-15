@@ -37,7 +37,6 @@
 
 <script setup>
 import { ref } from 'vue'
-import { defineEmits, defineProps } from 'vue'
 import { onMounted } from 'vue';
 
 const emit = defineEmits(['close', 'add', 'update:selected'])
