@@ -1,5 +1,6 @@
 <template>
-    <table class="w-5/6">
+  <div class="overflow-x-auto w-full">
+    <table class="w-full">
       <thead>
         <tr>
           <th
@@ -64,6 +65,7 @@
         </tr>
       </tbody>
     </table>
+  </div>
   </template>
   
   <script setup>
